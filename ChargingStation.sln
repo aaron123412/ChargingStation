@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChargingStationAPI", "ChargingStationAPI\ChargingStationAPI.csproj", "{8E3BDF2F-6F5A-4252-97C1-0CA25E236922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChargingStationWeb", "ChargingStationWeb\ChargingStationWeb.csproj", "{474CB5C3-A08D-4498-AF11-C6F1F19477E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E3BDF2F-6F5A-4252-97C1-0CA25E236922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3BDF2F-6F5A-4252-97C1-0CA25E236922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3BDF2F-6F5A-4252-97C1-0CA25E236922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3BDF2F-6F5A-4252-97C1-0CA25E236922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{474CB5C3-A08D-4498-AF11-C6F1F19477E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{474CB5C3-A08D-4498-AF11-C6F1F19477E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{474CB5C3-A08D-4498-AF11-C6F1F19477E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{474CB5C3-A08D-4498-AF11-C6F1F19477E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E32A1564-092D-4EBC-AF11-C75539E5EC78}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ChargingStationAPI</name>
+    </assembly>
+    <members>
+        <member name="M:ChargingStationAPI.Controllers.ChargingStationsController.GetChargingStations">
+            <summary>
+            Get all Charging Station
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ChargingStationAPI.Controllers.ChargingStationsController.GetChargingStation(System.Int32)">
+            <summary>
+            Get individual Charging Station
+            </summary>
+            <param name="id">The Id of Charging Station</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChargingStationAPI.Controllers.ChargingStationsController.CreateChargingStation(ChargingStationAPI.Models.Dtos.ChargingStationCreateDto)">
+            <summary>
+            Create a Charging Station
+            </summary>
+            <param name="objDto">The obj of Charging Station DTO</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChargingStationAPI.Controllers.ChargingStationsController.UpdateChargingStation(System.Int32,ChargingStationAPI.Models.Dtos.ChargingStationUpdateDto)">
+            <summary>
+            Update a Charging Station
+            </summary>
+            <param name="id">The Id of Charging Station</param>
+            <param name="objDto">The obj of Charging Station DTO</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChargingStationAPI.Controllers.ChargingStationsController.DeleteChargingStation(System.Int32)">
+            <summary>
+            Delete a Charging Station
+            </summary>
+            <param name="id">The Id of Charging Station</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChargingStationAPI.Controllers.ChargingStationsController.GetChargingStationByProvince(System.String)">
+            <summary>
+            Get list of Charging Station by Province
+            </summary>
+            <param name="province">The Name of Province</param>
+            <returns></returns>
+        </member>
+        <member name="M:ChargingStationAPI.Controllers.ChargingStationsV2Controller.GetChargingStations">
+            <summary>
+            Get all Charging Station
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,58 @@
+﻿@model ChargingStationWeb.Models.ViewModel.IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row pb-4 backgroundWhite">
+        @{
+            if (Model.ChargingStationList is null)
+                return;
+            var stationsGroupByProvince = Model.ChargingStationList.OrderBy(c=>c.Province).GroupBy(c => c.Province);
+            foreach (var stations in stationsGroupByProvince)
+            {
+                            <div class="container backgroundWhite pb-4">
+                                   <div class="card border">
+                                                    <div class="card-header bg-dark text-light ml-0 row container">
+                                                        <div class="col-12 col-md-6">
+                                                                <h1 class="text-warning">@stations.Key</h1>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="container rounded p-2">
+                                                            <div class="row">
+                                                                 <div class="col-12">
+                                                                    <h3 style="color:#bbb9b9">Total:  @stations.Count()</h3>
+                                                                 </div>
+                                                                <div class="col-12 col-lg-12">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                                <table class="table table-striped" style="border:1px solid #808080 ">
+                                                                                    <tr class="table-secondary">
+                                                                                        <th>
+                                                                                            Charging Station
+                                                                                        </th>
+                                                                                        <th>Address</th>
+                                                                                    </tr>
+                                                    @foreach (var chargingStation in stations)
+                                                    {
+                                                                                            <tr>
+                                                                                                <td>@chargingStation.Name</td>
+                                                                                                <td>@chargingStation.Address</td>
+                                                                                            </tr>
+                                                    }
+                                                                                </table>
+                                                                         </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+            }  
+        }
+              
+    </div>
+</div>

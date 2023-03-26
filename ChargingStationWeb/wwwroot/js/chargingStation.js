@@ -15,6 +15,7 @@ function loadDataTable() {
             { "data": "name", "width": "30%" },
             { "data": "province", "width": "10%" },
             { "data": "address", "width": "30%" },
+            { "data": "totalChargerPorts", "width": "10%" },
             {
                 "data": "id",
                 "render": function (data) {
@@ -26,7 +27,7 @@ function loadDataTable() {
                                     style='cursor:pointer;'> <i class='far fa-trash-alt'></i></a>
                                 </div>
                             `;
-                }, "width": "30%"
+                }, "width": "20%"
             }
         ]
     });

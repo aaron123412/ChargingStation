@@ -2,56 +2,95 @@
 @{
     var title = "Create Charging Station";
 }
-
-<form method="post" asp-action="Upsert" enctype="application/x-www-form-urlencoded">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="row px-2 mx-2 backgroundWhite border">
-        @if (Model.Id != 0)
-        {
-            title = "Update Charging Station";
-                    <input type="hidden"asp-for="Id"/>
-        }
-        <div class="col-12 p-3">
-            <h2 class="text-primary">@title</h2>
-        </div>
-        <div class="col-8">
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Name"></label>
+<div class="container">      
+    <main role="main" class="pb-3">
+        <form method="post" asp-action="Upsert" enctype="application/x-www-form-urlencoded">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row px-2 mx-2 backgroundWhite border">
+                @if (Model.Id != 0)
+                {
+                    title = "Update Charging Station";
+                            <input type="hidden"asp-for="Id"/>
+                }
+                <div class="col-12 p-3">
+                    <h2 class="text-primary">@title</h2>
                 </div>
                 <div class="col-8">
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="Name"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="Province"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Province" class="form-control" />
+                            <span asp-validation-for="Province" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="Address"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="Longitude"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Longitude" class="form-control" />
+                            <span asp-validation-for="Longitude" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="Latitude"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Latitude" class="form-control" />
+                            <span asp-validation-for="Latitude" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="TotalChargerPorts"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="TotalChargerPorts" class="form-control" />
+                            <span asp-validation-for="TotalChargerPorts" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label asp-for="Infomation"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Infomation" class="form-control" />
+                            <span asp-validation-for="Infomation" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-4 offset-4">
+                            <button type="submit" class="btn btn-primary form-control">
+                                @((Model.Id != 0) ? "Update" : "Create")
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <a asp-action="Index" class="btn btn-success form-control">Back to List</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Province"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="Province" class="form-control" />
-                    <span asp-validation-for="Province" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Address"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="Address" class="form-control" />
-                    <span asp-validation-for="Address" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4 offset-4">
-                    <button type="submit" class="btn btn-primary form-control">
-                        @((Model.Id != 0) ? "Update" : "Create")
-                    </button>
-                </div>
-                <div class="col-4">
-                    <a asp-action="Index" class="btn btn-success form-control">Back to List</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
+        </form>
+    </main>
+</div>

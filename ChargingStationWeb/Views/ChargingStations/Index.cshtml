@@ -3,18 +3,17 @@
 }
 
 <div class="p-4 border rounded backgroundWhite">
-    <div class="row">
-        <div class="col-6">
+    <div class="row  text-center">
+        <div class="col-9">
             <h2 class="text-primary">Charging Station List</h2>
         </div>
-        <div class="col-6 text-right">
+        <div class="col-3">
             <a asp-action="Upsert" class="btn btn-primary text-white"><i class="fas fa-plus"></i> &nbsp; Create New Charging Station</a>
         </div>
     </div>
     <br />
-    <br />
     <div style="background-color:#cde8e2" class="p-3 rounded">
-        <table id="tblData" class="table table-striped table-bordered" style="width:100%">
+        <table id="tblData" class="table table-striped table-bordered text-truncate" style="width:100%">
             <thead>
                 <tr class="table-danger">
                     <th>Name</th>

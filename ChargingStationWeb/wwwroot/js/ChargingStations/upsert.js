@@ -2,6 +2,12 @@
 
 $(document).ready(function () {
     loadProvinceSelection();
+
+    let province = $('#province').html();
+
+    if (province != undefined || province != "") {
+        $('#province_selection').val(province);
+    }
 });
 
 function loadProvinceSelection() {

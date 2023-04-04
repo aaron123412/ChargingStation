@@ -1,27 +1,28 @@
 ﻿@model ChargingStationWeb.Models.ViewModel.IndexViewModel
+@{
+    ViewData["Title"] = "Charging Station";
+}
 
-<section>
-    <div style="height: 100%;">
-        <div class="row g-0" style="height: 100%;">
-            <!-- Map -->
-            <div class="col-9" style="height: 100%;">
-                <div id="map" style="height: 100%;"></div>
+<section class="flex-fill pt-5">
+    <div class="row g-0 h-100">
+        <!-- Map -->
+        <div class="col-9">
+            <div id="map"></div>
+        </div>
+        <!-- Infomation -->
+        <div class="col-3 pt-5 p-3">
+            <div>
+                <label for = "typeahead" class="h2 text-left">Hệ thống trạm sạc</label>
+                <div class="input-group mb-3">
+                    <input id = "typeahead" type="search" class="form-control" >
+                </div>
             </div>
-            <!-- Infomation -->
-            <div class="col-3 pt-5 p-3">
-                <div>
-                    <h2 class="text-left">Hệ thống trạm sạc</h2>
-                    <div class="input-group mb-3">
-                        <input type="search" class="form-control" id = "typeahead">
-                    </div>
-                </div>
 
-                <div>   
-                    <h2 class="text-left">Khu vực tìm kiếm</h2>
-                    <select class="form-select" id="province_selection">
-                        <option value="tỉnh thành">Tỉnh thành</option>
-                    </select>
-                </div>
+            <div>   
+                <label for ="province_selection" class="h2 text-left">Khu vực tìm kiếm</label>
+                <select id="province_selection" class="form-select" >
+                    <option value="tỉnh thành">Tỉnh thành</option>
+                </select>
             </div>
         </div>
     </div>

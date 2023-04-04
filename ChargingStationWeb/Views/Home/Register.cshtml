@@ -3,25 +3,26 @@
     ViewData["Title"] = "Register";
 }
 
-<div class="vh-90 d-flex justify-content-center align-items-center">
+<section class="flex-fill pt-5">
+<div class="justify-content-center align-items-center">
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-6 col-lg-4 pt-5">
                 <div class="card bg-white">
                     <div class="card-body p-5">
-                        <form class="mb-3 mt-md-4" method="post">
-                            <h2 class="fw-bold mb-2 text-uppercase ">Register</h2>
-                            <p class=" mb-3">Please enter your username and password!</p>
+                        <h2 class="fw-bold mb-2 text-uppercase text-center">Register</h2>
+                        <p class=" mb-3">Please enter your username and password!</p>
+                        <form class="mb-3 mt-md-4" method="post" asp-action="Register" asp-controller="Home">
                             <div class="mb-3">
-                            <label for="username" class="form-label ">Username</label>
-                            <input  asp-for="Username" type="text" class="form-control" id = "username" placeholder="username">
+                                <label for="username" class="form-label ">Username</label>
+                                <input  asp-for="Username" type="text" class="form-control" id = "username" placeholder="username" required>
                             </div>
                             <div class="mb-3">
-                            <label for="password" class="form-label ">Password</label>
-                            <input asp-for="Password" type="password" class="form-control" id="password" placeholder="*******">
+                                <label for="password" class="form-label ">Password</label>
+                                <input asp-for="Password" type="password" class="form-control" id="password" placeholder="********" required>
                             </div>
                             <div class="d-grid">
-                            <button class="btn btn-outline-dark" type="submit">Register</button>
+                                <button class="btn btn-outline-dark" type="submit">Register</button>
                             </div>
                         </form>
                     </div>
@@ -30,3 +31,4 @@
         </div>
     </div>
 </div>
+</section>

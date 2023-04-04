@@ -94,12 +94,12 @@ namespace ChargingStationWeb.Controllers
                 TempData["alert_type"] = "successful";
                 TempData["alert"] = "Registration successful!";
 
-                return View();
+                return RedirectToAction(nameof(Login));
             }
 
             TempData["alert_type"] = "failure";
             TempData["alert"] = "Registration failure!";
-            return RedirectToAction(nameof(Login));
+            return View();
         }
 
         public async Task<IActionResult> Logout()

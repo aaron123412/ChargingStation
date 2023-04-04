@@ -12,7 +12,7 @@ namespace ChargingStationAPI.Models
         public string Address { get; set; }
         public double Longitude { get; set; }
         public double Latitude { get; set; }
-        public string Infomation { get; set; }
+        public string Information { get; set; }
         public int TotalChargerPorts { get; set; }
     }
 }

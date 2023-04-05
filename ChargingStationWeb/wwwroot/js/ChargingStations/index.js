@@ -19,6 +19,8 @@ function loadDataTable() {
             {
                 "data": "id",
                 "render": function (data) {
+                    let admin = $('#role_admin').html();
+                    if (admin.toLowerCase() == 'true') {
                         return `<div class="text-center">
                                 <a href="/ChargingStations/Upsert/${data}" class='btn btn-success text-white'
                                     style='cursor:pointer;'> <i class='bi bi-pencil-square'></i></a>
@@ -27,6 +29,14 @@ function loadDataTable() {
                                     style='cursor:pointer;'> <i class='bi bi-trash'></i></a>
                                 </div>
                             `;
+                    }
+                    else {
+                        return `<div class="text-center">
+                                <a href="/ChargingStations/Upsert/${data}" class='btn btn-success text-white'
+                                    style='cursor:pointer;'> <i class='bi bi-pencil-square'></i></a>
+                                </div>
+                                `;
+                    }
                 }, "width": "20%"
             }
         ]

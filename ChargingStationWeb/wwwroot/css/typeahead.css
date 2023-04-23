@@ -1,0 +1,29 @@
+﻿.tt-input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+}
+
+.tt-menu {
+    width: 100%;
+    /*margin-top: 0.5rem;*/
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    border-top: none;
+    background-color: #fff;
+}
+
+.tt-suggestion {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.tt-suggestion:hover {
+    background-color: #f8f9fa;
+}
+
+.twitter-typeahead {
+    flex: 1 1 auto;
+    width: auto;
+}

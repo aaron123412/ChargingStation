@@ -1,57 +1,92 @@
 ﻿@model ChargingStationWeb.Models.ChargingStation
 @{
+    ViewData["Title"] = "Charging Station";
     var title = "Create Charging Station";
 }
-
-<form method="post" asp-action="Upsert" enctype="application/x-www-form-urlencoded">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="row px-2 mx-2 backgroundWhite border">
-        @if (Model.Id != 0)
-        {
-            title = "Update Charging Station";
-                    <input type="hidden"asp-for="Id"/>
-        }
-        <div class="col-12 p-3">
-            <h2 class="text-primary">@title</h2>
-        </div>
-        <div class="col-8">
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Name"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Province"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="Province" class="form-control" />
-                    <span asp-validation-for="Province" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label asp-for="Address"></label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="Address" class="form-control" />
-                    <span asp-validation-for="Address" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4 offset-4">
-                    <button type="submit" class="btn btn-primary form-control">
-                        @((Model.Id != 0) ? "Update" : "Create")
-                    </button>
-                </div>
-                <div class="col-4">
-                    <a asp-action="Index" class="btn btn-success form-control">Back to List</a>
+<section class="flex-fill pt-5">
+    <div class="container">
+        <div class="row justify-content-center p-3">
+            <div class="col-lg-6 col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        @if (Model.Id != 0)
+                        {
+                            title = "Update Charging Station";
+                            <input type="hidden"asp-for="Id"/>
+                        }
+                        <div class="col-12">
+                            <h2 class="text-primary text-center">@title</h2>
+                        </div>
+                        <form method="post" asp-action="Upsert" enctype="application/x-www-form-urlencoded">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">                            
+                                    <div class="mb-2">
+                                        <div>
+                                            <label asp-for="Name" class="form-label"></label>
+                                            <input asp-for="Name" class="form-control" placeholder="Tên trạm sạc"/>
+                                            <span asp-validation-for="Name" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div>
+                                            <label asp-for="Province" class="form-label"></label>
+                                            <label hidden id="province">@Model.Province</label>
+                                            <select asp-for="Province" class="form-select" id="province_selection">
+                                                <option value="tỉnh thành" disabled selected>Tỉnh thành</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div>
+                                            <label asp-for="Address" class="form-label"></label>
+                                            <input asp-for="Address" class="form-control"  placeholder="Địa chỉ"/>
+                                            <span asp-validation-for="Address" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col">
+                                            <label asp-for="Latitude" class="form-label"></label>
+                                            <input asp-for="Latitude" class="form-control"/>
+                                            <span asp-validation-for="Latitude" class="text-danger"></span>
+                                        </div>
+                                        <div class="col">
+                                            <label asp-for="Longitude" class="form-label"></label>
+                                            <input asp-for="Longitude" class="form-control"/>
+                                            <span asp-validation-for="Longitude" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div>
+                                            <label asp-for="TotalChargerPorts" class="form-label"></label>
+                                            <input asp-for="TotalChargerPorts" class="form-control"/>
+                                            <span asp-validation-for="TotalChargerPorts" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div>
+                                            <label asp-for="Information" class="form-label"></label>
+                                            <textarea asp-for="Information" class="form-control" rows="3" placeholder="Thông tin thêm"></textarea>
+                                            <span asp-validation-for="Information" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2 justify-content-center">
+                                        <div class="col-4">
+                                            <button type="submit" class="btn btn-primary form-control">
+                                                @((Model.Id != 0) ? "Update" : "Create")
+                                            </button>
+                                        </div>
+                                        <div class="col-4">
+                                            <a asp-action="Index" class="btn btn-success form-control">Back to List</a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</form>
+</section>
+@section Scripts{
+        <script src="~/js/ChargingStations/upsert.js"></script>   
+}

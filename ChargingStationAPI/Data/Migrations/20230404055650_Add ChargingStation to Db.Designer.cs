@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChargingStationAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230102070458_AddUserToDB")]
-    partial class AddUserToDB
+    [Migration("20230404055650_Add ChargingStation to Db")]
+    partial class AddChargingStationtoDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,12 +30,24 @@ namespace ChargingStationAPI.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Information")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Latitude")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("float");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Province")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TotalChargerPorts")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

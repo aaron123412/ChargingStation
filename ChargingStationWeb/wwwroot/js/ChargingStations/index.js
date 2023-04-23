@@ -12,21 +12,32 @@ function loadDataTable() {
             "datatype": "json"
         },
         "columns": [
-            { "data": "name", "width": "30%" },
+            { "data": "name", "width": "20%" },
             { "data": "province", "width": "10%" },
-            { "data": "address", "width": "30%" },
+            { "data": "address", "width": "40%" },
+            { "data": "totalChargerPorts", "width": "10%" },
             {
                 "data": "id",
                 "render": function (data) {
+                    let admin = $('#role_admin').html();
+                    if (admin.toLowerCase() == 'true') {
                         return `<div class="text-center">
                                 <a href="/ChargingStations/Upsert/${data}" class='btn btn-success text-white'
-                                    style='cursor:pointer;'> <i class='far fa-edit'></i></a>
+                                    style='cursor:pointer;'> <i class='bi bi-pencil-square'></i></a>
                                     &nbsp;
                                 <a onclick=Delete("/ChargingStations/Delete/${data}") class='btn btn-danger text-white'
-                                    style='cursor:pointer;'> <i class='far fa-trash-alt'></i></a>
+                                    style='cursor:pointer;'> <i class='bi bi-trash'></i></a>
                                 </div>
                             `;
-                }, "width": "30%"
+                    }
+                    else {
+                        return `<div class="text-center">
+                                <a href="/ChargingStations/Upsert/${data}" class='btn btn-success text-white'
+                                    style='cursor:pointer;'> <i class='bi bi-pencil-square'></i></a>
+                                </div>
+                                `;
+                    }
+                }, "width": "20%"
             }
         ]
     });
